@@ -85,27 +85,27 @@ public class ReadCeiloData{
         Variable cloudL1 = ncfile.addVariable(null, "cloudL1", DataType.INT, "time");
         cloudL1.addAttribute( new Attribute("long_name", "cloud amount in 1st layer1"));
         cloudL1.addAttribute( new Attribute("units", "octa"));
-        cloudL1.addAttribute(new Attribute("Fill_value",-9999));
+        cloudL1.addAttribute(new Attribute("_FillValue",-9999));
         cloudL1.addAttribute(new Attribute("Vertical Visibility",9));
         cloudL1.addAttribute(new Attribute("No enough data",99));
         Variable cLayer1 = ncfile.addVariable(null,"cLayer1",DataType.INT,"time");
         cLayer1.addAttribute(new Attribute("long_name", "1st cloud layer height"));
         cLayer1.addAttribute(new Attribute("units","meter"));
-        cLayer1.addAttribute(new Attribute("Fill_value",-9999));
+        cLayer1.addAttribute(new Attribute("_FillValue",-9999));
         Variable cloudL2 = ncfile.addVariable(null, "cloudL2", DataType.INT, "time");
         cloudL2.addAttribute( new Attribute("long_name", "cloud amount in 2nd layer"));
         cloudL2.addAttribute( new Attribute("units", "octa"));
-        cloudL2.addAttribute(new Attribute("Fill_value",-9999));
+        cloudL2.addAttribute(new Attribute("_FillValue",-9999));
         cloudL2.addAttribute(new Attribute("Vertical Visibility",9));
         cloudL2.addAttribute(new Attribute("No enough data",99));
         Variable cLayer2 = ncfile.addVariable(null,"cLayer2",DataType.INT,"time");
         cLayer2.addAttribute(new Attribute("long_name", "2nd cloud layer height"));
         cLayer2.addAttribute(new Attribute("units","meter"));
-        cLayer2.addAttribute(new Attribute("Fill_value",-9999));
+        cLayer2.addAttribute(new Attribute("_FillValue",-9999));
         Variable cloudL3 = ncfile.addVariable(null, "cloudL3", DataType.INT, "time");
         cloudL3.addAttribute( new Attribute("long_name", "cloud amount in 3th layer"));
         cloudL3.addAttribute( new Attribute("units", "octa"));
-        cloudL3.addAttribute(new Attribute("Fill_value",-9999));
+        cloudL3.addAttribute(new Attribute("_FillValue",-9999));
         cloudL3.addAttribute(new Attribute("Vertical Visibility",9));
         cloudL3.addAttribute(new Attribute("No enough data",99));
         Variable cLayer3 = ncfile.addVariable(null,"cLayer3",DataType.INT,"time");
@@ -115,30 +115,30 @@ public class ReadCeiloData{
         Variable cloudL4 = ncfile.addVariable(null, "cloudL4", DataType.INT, "time");
         cloudL4.addAttribute( new Attribute("long_name", "cloud amount in 4th layer"));
         cloudL4.addAttribute( new Attribute("units", "octa"));
-        cloudL4.addAttribute(new Attribute("Fill_value",-9999));
+        cloudL4.addAttribute(new Attribute("_FillValue",-9999));
         cloudL4.addAttribute(new Attribute("Vertical Visibility", 9));
         cloudL4.addAttribute(new Attribute("No enough data",99));
         Variable cLayer4 = ncfile.addVariable(null,"cLayer4",DataType.INT,"time");
         cLayer4.addAttribute(new Attribute("long_name", "4th cloud layer height"));
         cLayer4.addAttribute(new Attribute("units","meter"));
-        cLayer4.addAttribute(new Attribute("Fill_value",-9999));
+        cLayer4.addAttribute(new Attribute("_FillValue",-9999));
         Variable cloudL5 = ncfile.addVariable(null, "cloudL5", DataType.INT, "time");
         cloudL5.addAttribute( new Attribute("long_name", "cloud amount in 5th layer"));
         cloudL5.addAttribute( new Attribute("units", "octa"));
-        cloudL5.addAttribute(new Attribute("Fill_value",-9999));
+        cloudL5.addAttribute(new Attribute("_FillValue",-9999));
         cloudL5.addAttribute(new Attribute("Vertical Visibility",9));
         cloudL5.addAttribute(new Attribute("no enough data",99));
         Variable cLayer5 = ncfile.addVariable(null,"cLayer5",DataType.INT,"time");
         cLayer5.addAttribute(new Attribute("long_name", "5th cloud layer height"));
         cLayer5.addAttribute(new Attribute("units","meter"));
-        cLayer5.addAttribute(new Attribute("Fill_value",-9999));
+        cLayer5.addAttribute(new Attribute("_FillValue",-9999));
         Variable CBN = ncfile.addVariable(null,"CB",DataType.INT,"time");
         CBN.addAttribute(new Attribute("long_name","cloud base number"));
         CBN.addAttribute(new Attribute("units", "number"));
         CBN.addAttribute(new Attribute("no significant backscatter",0));
         CBN.addAttribute(new Attribute("obscuration but no cloud",4));
         CBN.addAttribute(new Attribute("transparent obscuration",5));
-        CBN.addAttribute(new Attribute("Fill_value",-9));
+        CBN.addAttribute(new Attribute("_FillValue",-9));
         Variable Self_check = ncfile.addVariable(null,"shelf_check",DataType.CHAR,"time");
         Self_check.addAttribute(new Attribute("OK","0"));
         Self_check.addAttribute(new Attribute("Warning","W"));
@@ -491,7 +491,7 @@ public class ReadCeiloData{
     }
     
     public static Date dateConv1(String s){
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateInString = s;
         Date date = new Date();
         try {
