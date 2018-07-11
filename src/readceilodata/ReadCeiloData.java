@@ -74,7 +74,7 @@ public class ReadCeiloData{
         int i=0;
         
         NetcdfFileWriter ncfile = NetcdfFileWriter.createNew(NetcdfFileWriter.Version.netcdf4, location, null);
-        Dimension heightDim = ncfile.addDimension(null,"height",1539);
+        Dimension heightDim = ncfile.addDimension(null,"height",1540);
         Dimension timeDim = ncfile.addUnlimitedDimension("time");
         
         Variable height = ncfile.addVariable(null,"height",DataType.INT,"height");
@@ -279,7 +279,7 @@ public class ReadCeiloData{
             ArrayList<String> parL = new ArrayList<String>();
             ArrayList<Integer> sbacL = new ArrayList<Integer>();
 
-            for(int n = 1; n < 1540; n++){
+            for(int n = 0; n < 1540; n++){
                 hei = n * 10;
                 h.add(hei);
             }
@@ -433,7 +433,7 @@ public class ReadCeiloData{
                 mparametersData.set(ima1.set(timeIdx),parL.get(timeIdx));
                 SumData.setInt(ima1.set(timeIdx),sbacL.get(timeIdx));
 
-               for(int j=0; j < 1539 ;j++) {
+               for(int j=0; j < 1540 ;j++) {
                    heightData.setInt(hi.set(j), h.get(j));
                     TWAB.set(ima2.set(timeIdx,j),hx2D.get(timeIdx).get(j));}
             }
@@ -552,7 +552,7 @@ public class ReadCeiloData{
         String ss="";
         double digit2=0.0;
         ArrayList<Double> bcdigit = new ArrayList<Double>();
-        for(int i=0; i < s.length()-5; i=i+5){
+        for(int i=0; i < s.length(); i=i+5){
         
             ss = s.substring(i,i+5);      //s is 5th line 770 character without end of line char.
             digit1 = Integer.parseInt(ss,16);  //convert hexadecimal to decimal
